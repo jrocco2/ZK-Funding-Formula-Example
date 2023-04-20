@@ -24,7 +24,7 @@ describe("TurboVerifier", function () {
         await verifierContract.deployed();
 
         const compiled_program = compile(path.resolve(__dirname, "../circuits/src/main.nr"));
-
+        
         acir = compiled_program.circuit;
         abi = compiled_program.abi;
 
@@ -68,7 +68,7 @@ describe("TurboVerifier", function () {
         expect(verified).eq(false);
     });
 
-    it.only("Should verify proof in smart contract", async function () {
+    it("Should verify proof in smart contract", async function () {
         abi.personIncome = 70000;
         abi.houseYearlyRent = 200000;
         abi.housePrice = 1000000;
